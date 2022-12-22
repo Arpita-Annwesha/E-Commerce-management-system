@@ -1,3 +1,8 @@
+<?php
+ include('.././model/connect.php');
+ include('../controller/functions/common_function.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,17 +18,17 @@
     <link rel="stylesheet" href="../style1.css">
 </head>
 
-<body>
+<body style="background-color:rgb(197, 202, 233);" class="body">
     <!-- navbar -->
     <div class="container-fluid p-0">
         <!-- first segment -->
         <nav class="navbar navbar-expand-lg navbar-light bg-warning">
             <div class="container-fluid">
-                <img src="..\images\logo.jfif" alt="" class="logo">
+                <img src="..\view\images\logo.jfif" alt="" class="logo">
                 <nav class="navbar navbar-expand-lg">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="" class="nav-link text-dark fs-5">Welcome Guest</a>
+                            <a href="" class="nav-link text-dark fs-4"><h4>Welcome Guest</h4></a>
                         </li>
                     </ul>
             
@@ -34,28 +39,29 @@
 
         <!-- secong segment -->
         <div class="bg-light">
-            <h3 class="text-center p-2">Manage Details</h3>
+            <h2 class="text-center p-2"><u>Manage Details</u></h2>
         </div>
 
         <!-- third segment -->
         <div class="col-md-12 bg-dark p-1 d-flex align-items-center">
             <div class="p-2 pb-0">
-                <a href=""><img src="..\images\admin.jpg" alt="" class="admin_image"></a>
+                <a href=""><img src="..\view\images\admin.jpg" alt="" class="admin_image"></a>
                 <p class="text-light text-center">Arpita</p>
             </div>
 
             <!-- button*10>a.nav-link.text-light.bg-info.my-1 -->
-            <div class="button text-center px-5">
-                <button class="my-3"><a href="" class="nav-link text-dark bg-warning my-1 p-2">View Products</a></button>
-                <button class="my-3"><a href="insert_products.php" class="nav-link text-dark bg-warning my-1 p-2">Insert Products</a></button>
-                <button class="my-3"><a href="admin.php?insert_category" class="nav-link text-dark bg-warning my-1 p-2">Insert Categories</a></button>
-                <button class="my-3"><a href="admin.php?insert_brand" class="nav-link text-dark bg-warning my-1 p-2">Insert Brands</a></button>
-                <button class="my-3"><a href="" class="nav-link text-dark bg-warning my-1 p-2">View Categories</a></button>
-                <button class="my-3"><a href="" class="nav-link text-dark bg-warning my-1 p-2">View Brands</a></button>
-                <button class="my-3"><a href="" class="nav-link text-dark bg-warning my-1 p-2">All Orders</a></button>
-                <button class="my-3"><a href="" class="nav-link text-dark bg-warning my-1 p-2">All Payments</a></button>
-                <button class="my-3"><a href="" class="nav-link text-dark bg-warning my-1 p-2">List Users</a></button>
-                <button class="my-3"><a href="" class="nav-link text-dark bg-warning my-1 p-2">Log Out</a></button>
+            <div class="button text-center my-button">
+                <button class="my-3"><a href="insert_products.php" class="nav-link">Insert Products</a></button>
+                <button class="my-3"><a href="admin.php?insert_category" class="nav-link">Insert Categories</a></button>
+                <button class="my-3"><a href="admin.php?insert_brand" class="nav-link">Insert Brands</a></button>
+                <button class="my-3"><a href="admin.php?view_products" class="nav-link">View Products</a></button>
+                <button class="my-3"><a href="" class="nav-link">View Categories</a></button>
+                <button class="my-3"><a href="" class="nav-link">View Brands</a></button>
+                <button class="my-3"><a href="" class="nav-link">All Orders</a></button>
+                <button class="my-3"><a href="" class="nav-link">All Payments</a></button>
+                <button class="my-3"><a href="" class="nav-link">User List</a></button>
+                <button class="my-3"><a href="" class="nav-link">Log Out</a></button>
+                
             </div>
         </div>
     </div>
@@ -69,8 +75,15 @@
         if(isset($_GET['insert_brand'])){
             include('insert_brands.php');
         }
+        if(isset($_GET['view_products'])){
+            include('view_products.php');
+        }
+        if(isset($_GET['edit_products'])){
+            include('edit_products.php');
+        }
         ?>
     </div>
+
 
 
 
